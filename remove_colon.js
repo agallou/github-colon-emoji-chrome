@@ -8,9 +8,10 @@ var removeColon = function(e) {
 	}
 };
 
-//gist
-jQuery(document).on('keydown', 'textarea.comment-form-textarea', removeColon);
- 
-//github
-jQuery('#new_comment_field').on('keydown', removeColon);
+var textarea = jQuery('textarea.comment-form-textarea');
+textarea.keydown(removeColon);
+var eventList = jQuery._data(textarea[0], "events");
+if (typeof eventList.keydown != 'undefined') {
+  eventList.keydown.unshift(eventList.keydown.pop());
+}
 
