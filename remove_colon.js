@@ -3,7 +3,7 @@ var removeColon = function(e) {
 	var previousChar = $(this).val().substring(selectionStart, selectionStart + 1);
 	var previousPreviousChar = $(this).val().substring(selectionStart - 1, selectionStart - 1 + 1);
 	// 13 : entrée
-	if (e.which == 13 && (previousChar == ":" || previousPreviousChar == ":")) {
+	if (e.which == 13 && previousChar == ":") {
 		e.stopImmediatePropagation();
 	}
 };
