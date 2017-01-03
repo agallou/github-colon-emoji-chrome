@@ -7,4 +7,5 @@ function inject_page_script (script_file) {
     document.documentElement.removeChild(script);
 } 
 
+inject_page_script('https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js');
 inject_page_script('remove_colon.js');
